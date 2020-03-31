@@ -2,13 +2,7 @@ FROM ubuntu:18.04
 
 RUN apt-get update -y && \
     apt-get upgrade -y && \
-    apt-get install -y git-core curl build-essential openssl libssl-dev python
+    apt-get install -y curl
 
-RUN git clone https://github.com/nodejs/node.git && \
-    cd node && \
-    git checkout v8.12.0 && \
-    ./configure && \
-    make && \
-    make install
-
-RUN curl -L https://npmjs.org/install.sh | sh
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
+RUN apt-get install -y nodejs
