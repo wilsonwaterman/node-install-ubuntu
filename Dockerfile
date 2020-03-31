@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 
 RUN apt-get update -y && \
     apt-get upgrade -y && \
-    apt-get install git-core curl build-essential openssl libssl-dev python && \
+    apt-get install -y git-core curl build-essential openssl libssl-dev python
 
 RUN git clone https://github.com/nodejs/node.git && \
     cd node && \
